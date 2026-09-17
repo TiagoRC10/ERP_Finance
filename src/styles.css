@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --color-bg: #070b12;
+  --color-bg-raised: #0b111c;
+  --color-surface: #101826;
+  --color-surface-2: #162033;
+  --color-surface-3: #1b2940;
+  --color-fg: #e8eef8;
+  --color-muted: #93a0b5;
+  --color-faint: #66758c;
+  --color-border: #22314a;
+  --color-border-strong: #314866;
+  --color-accent: #3ec6ff;
+  --color-accent-dim: #1a4d6e;
+  --color-income: #3ddc97;
+  --color-income-dim: #123b2c;
+  --color-expense: #ff5d73;
+  --color-expense-dim: #4a1520;
+  --color-warn: #f5b942;
+  --color-whatsapp: #25d366;
+  --color-ring: #3ec6ff;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+  body {
+    margin: 0;
+    background-image:
+      radial-gradient(1200px 520px at 18% -10%, rgb(62 198 255 / 0.07), transparent 60%),
+      radial-gradient(900px 420px at 92% 0%, rgb(61 220 151 / 0.04), transparent 55%);
+    background-attachment: fixed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  * {
+    border-color: var(--color-border);
+  }
+  ::selection {
+    background: rgb(62 198 255 / 0.28);
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
